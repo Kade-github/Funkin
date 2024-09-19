@@ -693,8 +693,6 @@ class PlayState extends MusicBeatSubState
 
     Conductor.instance.update(pre);
 
-    trace('Pre-start song at ' + Conductor.instance.songPosition);
-
     // The song is now loaded. We can continue to initialize the play state.
     initCameras();
     initHealthBar();
