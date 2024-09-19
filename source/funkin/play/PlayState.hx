@@ -857,7 +857,7 @@ class PlayState extends MusicBeatSubState
       // Reset music properly.
       if (FlxG.sound.music != null)
       {
-        FlxG.sound.music.time = Math.min(FlxG.sound.music.length, Math.max(0, startTimestamp - Conductor.instance.instrumentalOffset));
+        FlxG.sound.music.time = startTimestamp - Conductor.instance.instrumentalOffset;
         FlxG.sound.music.pitch = playbackRate;
         FlxG.sound.music.pause();
       }
@@ -915,7 +915,11 @@ class PlayState extends MusicBeatSubState
       {
         // Do NOT apply offsets at this point, because they already got applied the previous frame!
         Conductor.instance.update(Conductor.instance.songPosition + elapsed * 1000, false);
-        if (Conductor.instance.songPosition - Conductor.instance.instrumentalOffset >= (startTimestamp)) startSong();
+        if (Conductor.instance.songPosition - Conductor.instance.instrumentalOffset >= (startTimestamp) && Countdown.finished)
+        {
+          trace("started song at " + Conductor.instance.songPosition);
+          startSong();
+        }
       }
     }
     else
