@@ -126,7 +126,17 @@ class SustainTrail extends FlxSprite
    */
   public function setIndices(indices:Array<Int>):Void
   {
-    this.indices = new DrawData<Int>(indices.length, false, indices);
+    if (this.indices.length == indices.length)
+    {
+      for (i in 0...indices.length)
+      {
+        this.indices[i] = indices[i];
+      }
+    }
+    else
+    {
+      this.indices = new DrawData<Int>(indices.length, false, indices);
+    }
   }
 
   /**
@@ -135,7 +145,17 @@ class SustainTrail extends FlxSprite
    */
   public function setVertices(vertices:Array<Float>):Void
   {
-    this.vertices = new DrawData<Float>(vertices.length, false, vertices);
+    if (this.vertices.length == vertices.length)
+    {
+      for (i in 0...vertices.length)
+      {
+        this.vertices[i] = vertices[i];
+      }
+    }
+    else
+    {
+      this.vertices = new DrawData<Float>(vertices.length, false, vertices);
+    }
   }
 
   /**
@@ -144,7 +164,17 @@ class SustainTrail extends FlxSprite
    */
   public function setUVTData(uvtData:Array<Float>):Void
   {
-    this.uvtData = new DrawData<Float>(uvtData.length, false, uvtData);
+    if (this.uvtData.length == uvtData.length)
+    {
+      for (i in 0...uvtData.length)
+      {
+        this.uvtData[i] = uvtData[i];
+      }
+    }
+    else
+    {
+      this.uvtData = new DrawData<Float>(uvtData.length, false, uvtData);
+    }
   }
 
   /**
