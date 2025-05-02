@@ -501,7 +501,7 @@ class FreeplayState extends MusicBeatSubState
       switch (str)
       {
         case 'fav':
-          generateSongList({filterType: FAVORITE}, true);
+          generateSongList({filterType: FAVORITE}, false);
         case 'ALL':
           generateSongList(null, true);
         case '#':
